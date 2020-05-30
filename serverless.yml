@@ -1,0 +1,20 @@
+service: rust-lambda
+
+provider:
+  name: aws
+  runtime: rust
+
+plugins:
+  - serverless-rust
+
+package:
+  individually: true
+
+functions:
+  tuser:
+    handler: tuser
+
+    events:
+      - http:
+          path: /tuser
+          method: POST

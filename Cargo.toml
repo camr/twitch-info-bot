@@ -1,0 +1,10 @@
+[package]
+name = "tuser"
+version = "0.1.0"
+authors = ["Cameron Rivers <cameron.rivers@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+lambda_http = "0.1"
+lambda_runtime = "0.2"
+serde = "1.0"
