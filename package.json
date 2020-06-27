@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test": "npx sls invoke local -f tuser -d '$(cat tests/payload.json)'"
+  },
+  "devDependencies": {
+    "serverless": "^1.73.1",
+    "serverless-rust": "^0.3.8"
+  }
+}

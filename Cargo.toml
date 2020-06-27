@@ -1,10 +1,22 @@
 [package]
-name = "tuser"
+name = "twitch-info-bot"
 version = "0.1.0"
 authors = ["Cameron Rivers <cameron.rivers@gmail.com>"]
 edition = "2018"
 
+[[bin]]
+name = "tuser"
+
 [dependencies]
-lambda_http = "0.1"
-lambda_runtime = "0.2"
-serde = "1.0"
+futures = "0.3"
+lambda = { git = "https://github.com/awslabs/aws-lambda-rust-runtime" }
+log = "0.4"
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+rusoto_secretsmanager = "0.43"
+rusoto_signature = "0.43"
+serde = {version = "1.0", features = ["derive"]}
+serde_derive = "1.0"
+serde_json = "1.0"
+simple-error = "0.2"
+simple_logger = "1.6"
+tokio = { version = "0.2", features = ["macros"] }

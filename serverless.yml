@@ -1,8 +1,10 @@
 service: rust-lambda
-
 provider:
   name: aws
   runtime: rust
+  memorySize: 64
+  stage: dev
+  region: us-west-2
 
 plugins:
   - serverless-rust
@@ -12,9 +14,11 @@ package:
 
 functions:
   tuser:
-    handler: tuser
-
+    # handler value syntax is `{cargo-package-name}.{bin-name}`
+    # or `{cargo-package-name}` for short when you are building a
+    # default bin for a given package.
+    handler: twitch-info-bot.tuser
     events:
       - http:
-          path: /tuser
+          path: '/tuser'
           method: POST
